@@ -1,13 +1,17 @@
 const https = require('https');
-const fs = require('fs');
 const path = require('path');
 const express = require('express');
 
+require('dotenv').config();
+
 const app = express();
 
+const { privateKey } = process.env.PRIVATE_KEY;
+const { certificate } = process.env.CERTIFICATE;
+
 const options = {
-    key: fs.readFileSync('./etherscore-test.com-key.pem'), // Replace with the path to your key
-    cert: fs.readFileSync('./etherscore-test.com.pem') // Replace with the path to your certificate
+    key: privateKey,
+    cert: certificate,
 }
 
 app.use(express.static(path.join(__dirname, 'dist')));

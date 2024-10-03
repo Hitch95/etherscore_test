@@ -22,4 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SSL Certificates
 *.pem
+
+# env files
+.env*
