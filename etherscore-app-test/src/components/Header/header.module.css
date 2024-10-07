@@ -1,8 +1,6 @@
 nav {
     position: absolute;
     top: 4rem;
-    --purple-color: #25263c;
-    --white-color: white;
 
     header {
         position: relative;
@@ -18,12 +16,25 @@ nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: transparent;
-            color: var(--purple-color);
+            background-color: inherit;
             border: none;
             padding: 0.5rem 0.75rem;
             cursor: pointer;
             border-radius: 30px;
+
+            &.dark {
+                color: #dcdad7;
+            }
+
+            &.light:hover {
+                background-color: var(--purple);
+                color: var(--white);
+            }
+
+            &.dark:hover {
+                background-color: #dcdad7;
+                color: var(--black);
+            }
 
             .world-icon {
                 min-width: 1.75rem;
@@ -38,21 +49,22 @@ nav {
             }
         }
 
-        button:hover {
-            background-color: #25263c;
-            color: white;
-        }
-
         .popup {
             position: absolute;
             top: 50px;
             right: 10px;
-            background-color: white;
-            border: 1px solid #ddd;
             border-radius: 0.5rem;
             padding: 5px;
             border: none;
             outline: none;
+
+            &.light {
+                background-color: var(--white);
+            }
+
+            &.dark {
+                background-color: #dcdad7;
+            }
 
             .language-option {
                 border-radius: 0.5rem;

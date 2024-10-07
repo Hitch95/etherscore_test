@@ -13,8 +13,8 @@ div.account-container {
             font-weight: bold;
             align-items: center;
             justify-content: space-between;
-            background-color: #25263c;
-            color: white;
+            background-color: var(--purple);
+            color: var(--white);
             border: none;
             padding: 10px 30px;
             cursor: pointer;
@@ -23,8 +23,8 @@ div.account-container {
 
         button.disconnect-button:hover {
             background-color: transparent;
-            color: #25263c;
-            outline: 2px solid #25263c;
+            color: var(--purple);
+            outline: 2px solid var(--purple);
         }
     }
 

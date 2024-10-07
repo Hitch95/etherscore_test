@@ -17,7 +17,7 @@ label.switch {
     }
 
     input:checked+.slider {
-        background-color: var(--purple-color);
+        background-color: var(--purple);
     }
 
     input:checked+.slider:before {
@@ -27,14 +27,13 @@ label.switch {
 
     span.slider {
         z-index: 1;
-        --purple-color: #25263c;
         position: absolute;
         cursor: pointer;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: var(--purple-color);
+        background-color: var(--purple);
         transition: .5s;
         border-radius: 30px;
     }
@@ -47,7 +46,7 @@ label.switch {
         border-radius: 50%;
         left: 10%;
         bottom: 15%;
-        box-shadow: inset 8px -4px 0px 0px #fff;
+        box-shadow: inset 8px -4px 0px 0px white;
         background: var(--);
         transition: .5s;
     }

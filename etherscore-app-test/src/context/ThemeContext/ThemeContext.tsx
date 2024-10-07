@@ -1,4 +1,5 @@
-import { FC, ReactNode, createContext, useState, useEffect } from "react";
+// File 1: ThemeContext.tsx
+import React, { FC, ReactNode, createContext, useState } from "react";
 
 type ThemeContextType = {
     isDarkMode: boolean;
@@ -8,19 +9,15 @@ type ThemeContextType = {
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const [mode, setMode] = useState<"light" | "dark">("light");
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleTheme = () => {
-        setMode((prev) => (prev === "light" ? "dark" : "light"));
+        setIsDarkMode((prevMode) => !prevMode);
     };
 
-    useEffect(() => {
-        document.body.className = `theme ${mode}`;
-    }, [mode]);
-
     return (
-        <ThemeContext.Provider value={{ toggleTheme, isDarkMode: mode === "dark"  }}>
-            <div className={`theme ${mode}`}>{children}</div>
+        <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+            {children}
         </ThemeContext.Provider>
-    )
+    );
 };

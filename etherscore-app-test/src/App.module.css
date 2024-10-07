@@ -1,13 +1,21 @@
 div.container {
-    background: linear-gradient(to right, #FCF7E2, #F6E6F4, #D6FFF6);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
     padding: 20px;
+
+    &.light {
+        background: linear-gradient(to right, #FCF7E2, #F6E6F4, #D6FFF6);
+        color: black;
+    }
+
+    &.dark {
+        background: linear-gradient(to left, #25263c, #5813ec);
+        color: var(--white);
+    }
 
     button.connect-button {
         display: flex;
@@ -18,17 +26,33 @@ div.container {
         font-weight: bold;
         font-size: 1em;
         padding: 10px 30px;
-        background-color: #25263c;
-        color: white;
         border: none;
         border-radius: 20px;
         cursor: pointer;
+
+        &.light {
+            color: var(--white);
+            background-color: var(--purple);
+        }
+
+        &.light:hover {
+            color: var(--purple);
+            outline: 2px solid var(--purple);
+        }
+
+        &.dark {
+            color: var(--black);
+            background-color: var(--orange);
+        }
+
+        &.dark:hover {
+            color: var(--orange);
+            outline: 2px solid var(--orange);
+        }
     }
 
     button.connect-button:hover {
         background-color: transparent;
-        color: #25263c;
-        outline: 2px solid #25263c;
     }
 
     .modal-overlay {
@@ -50,7 +74,7 @@ div.container {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: white;
+            background-color: var(--white);
             padding: 30px 20px 20px 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -66,8 +90,8 @@ div.container {
                 width: 6.5em;
                 height: 2.3em;
                 margin: 0.5em;
-                background: black;
-                color: white;
+                background: var(--black);
+                color: var(--white);
                 border: none;
                 border-radius: 0.625em;
                 font-size: 20px;
@@ -80,12 +104,12 @@ div.container {
             }
 
             button:hover {
-                color: black;
+                color: var(--black);
             }
 
             button:after {
                 content: "";
-                background: white;
+                background: var(--white);
                 position: absolute;
                 z-index: -1;
                 left: -20%;

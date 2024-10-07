@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext/ThemeContext';
 import styles from "./switchMode.module.css";
 
@@ -13,7 +13,7 @@ const SwitchMode = () => {
 
     return (
         <label className={styles.switch} onClick={toggleTheme}>
-            <input type="checkbox" checked={isDarkMode} className={styles.checkbox} readOnly/>
+            <input type="checkbox" checked={isDarkMode} className={styles.checkbox} readOnly />
             <span className={styles.slider}></span>
         </label>
     );

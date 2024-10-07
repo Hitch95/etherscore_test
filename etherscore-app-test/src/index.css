@@ -108,6 +108,15 @@ section {
     display: block;
 }
 
+:root {
+    /* var colors for Dark Mode */
+    --black: black;
+    --orange: #FF6D00;
+    /* var colors for Light Mode */
+    --white: white;
+    --purple: #25263c;
+}
+
 body {
     line-height: 1;
     font-family: 'Roboto', sans-serif;
@@ -134,18 +143,4 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-.theme {
-    transition: 1s all ease;
-}
-
-.light {
-    background-color: white;
-    color: #111;
-}
-
-.dark {
-    background-color: #111;
-    color: #bbb;
 }
