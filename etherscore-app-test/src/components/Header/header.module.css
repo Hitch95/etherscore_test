@@ -1,0 +1,71 @@
+nav {
+    position: absolute;
+    top: 4rem;
+    --purple-color: #25263c;
+    --white-color: white;
+
+    header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80vw;
+
+        button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            color: var(--purple-color);
+            border: none;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            border-radius: 30px;
+
+            .world-icon {
+                min-width: 1.75rem;
+                height: auto;
+                padding-right: 0.5rem;
+            }
+
+            .arrow-icon {
+                min-width: 1.75rem;
+                height: auto;
+                padding-left: 1.25rem;
+            }
+        }
+
+        button:hover {
+            background-color: #25263c;
+            color: white;
+        }
+
+        .popup {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 5px;
+            border: none;
+            outline: none;
+
+            .language-option {
+                border-radius: 0.5rem;
+                font-weight: 500;
+                padding: 5px 10px;
+                cursor: pointer;
+                color: #111;
+                padding: 1rem;
+            }
+
+            .language-option:hover {
+                background-color: #f4f5f4;
+            }
+        }
+    }
+}
