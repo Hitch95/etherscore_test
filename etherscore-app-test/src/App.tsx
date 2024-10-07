@@ -3,7 +3,7 @@ import { useAccount } from 'wagmi';
 import { useTranslation } from 'react-i18next';
 import { IoWalletOutline } from "react-icons/io5";
 
-import { Account } from "./account";
+import { Account } from "./components/Account/account";
 import { WalletOptions } from "./wallet-options";
 import Header from './components/Header/header';
 import WalletInfo from './components/WalletInfo/walletInfo';
@@ -29,10 +29,12 @@ const App = () => {
   return (
     <div className={styles.container}>
       <Header />
-      <button className={styles["connect-button"]} onClick={toggleModal}>
-        {t("connect_wallet")}
-        <IoWalletOutline />
-      </button>
+      {!isConnected && (
+        <button className={styles["connect-button"]} onClick={toggleModal}>
+          {t("connect_wallet")}
+          <IoWalletOutline />
+        </button>
+      )}
 
       <ConnectWallet />
 
