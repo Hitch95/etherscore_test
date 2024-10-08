@@ -23,11 +23,14 @@ export function WalletOptions({ onClose }: WalletOptionsProps) {
 
   return (
     <>
-      <IoClose className='close-icon' onClick={onClose} />
+      <IoClose 
+        className={`${styles["close-icon"]} ${isDarkMode ? styles.dark : styles.light}`}
+        onClick={onClose} 
+      />
       {filteredConnectors.map((connector) => (
         <button
-          className={`${styles["wallet-button"]} ${isDarkMode ? styles.dark : styles.light}`}
           key={connector.uid}
+          className={`${styles["wallet-button"]} ${isDarkMode ? styles.dark : styles.light}`}
           onClick={() => connect({ connector })}
         >
           {connector.name}

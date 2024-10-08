@@ -22,18 +22,18 @@ nav {
             cursor: pointer;
             border-radius: 30px;
 
-            &.dark {
-                color: #dcdad7;
-            }
-
             &.light:hover {
                 background-color: var(--purple);
                 color: var(--white);
             }
 
+            &.dark {
+                color: var(--white);
+            }
+
             &.dark:hover {
-                background-color: #dcdad7;
-                color: var(--black);
+                background-color: var(--black);
+                color: var(--white);
             }
 
             .world-icon {
@@ -51,8 +51,8 @@ nav {
 
         .popup {
             position: absolute;
-            top: 50px;
-            right: 10px;
+            top: 60px;
+            right: 30px;
             border-radius: 0.5rem;
             padding: 5px;
             border: none;
@@ -63,7 +63,7 @@ nav {
             }
 
             &.dark {
-                background-color: #dcdad7;
+                background-color: var(--black);
             }
 
             .language-option {
@@ -71,12 +71,23 @@ nav {
                 font-weight: 500;
                 padding: 5px 10px;
                 cursor: pointer;
-                color: #111;
                 padding: 1rem;
-            }
 
-            .language-option:hover {
-                background-color: #f4f5f4;
+                &.light {
+                    color: var(--black);
+                }
+
+                &.light:hover {
+                    background-color: #f4f5f4;
+                }
+
+                &.dark {
+                    color: var(--white)
+                }
+
+                &.dark:hover {
+                    background-color: #333;
+                }
             }
         }
     }

@@ -32,6 +32,12 @@ const App = () => {
   const toggleModal = () => setModalOpen((prev) => !prev);
 
   useEffect(() => {
+    if (isConnected) {
+      setModalOpen(false);
+    }
+  }, [isConnected]);
+
+  useEffect(() => {
     i18n.changeLanguage("en");
   }, [i18n]);
 
@@ -39,8 +45,8 @@ const App = () => {
     <div className={`${styles.container} ${isDarkMode ? styles.dark : styles.light}`}>
       <Header />
       {!isConnected && (
-        <button 
-          className={`${styles["connect-button"]} ${isDarkMode ? styles.dark : styles.light}`} 
+        <button
+          className={`${styles["connect-button"]} ${isDarkMode ? styles.dark : styles.light}`}
           onClick={toggleModal}
         >
           {t("connect_wallet")}
@@ -52,7 +58,7 @@ const App = () => {
 
       {isConnected && <WalletInfo />}
 
-      {isModalOpen && (
+      {!isConnected && isModalOpen && (
         <div className={styles["modal-overlay"]}>
           <div className={`${styles["modal"]} ${isDarkMode ? styles.dark : styles.light}`}>
             <WalletOptions onClose={toggleModal} />

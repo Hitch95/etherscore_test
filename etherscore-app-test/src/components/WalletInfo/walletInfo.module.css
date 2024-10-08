@@ -12,8 +12,15 @@ div.wallet-info-container {
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        color: var(--purple);
         font-weight: bold;
+
+        &.light {
+            color: var(--purple);
+        }
+
+        &.dark {
+            color: var(--white);
+        }
 
         &:first-of-type p {
             font-size: 1rem;

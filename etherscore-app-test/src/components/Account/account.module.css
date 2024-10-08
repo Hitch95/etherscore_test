@@ -7,24 +7,40 @@ div.account-container {
     gap: 1rem;
 
     div.button-part {
-        button {
+        button.disconnect-button {
             font-family: "Roboto", sans-serif;
             font-size: 1em;
             font-weight: bold;
             align-items: center;
             justify-content: space-between;
-            background-color: var(--purple);
-            color: var(--white);
             border: none;
             padding: 10px 30px;
             cursor: pointer;
             border-radius: 20px;
-        }
 
-        button.disconnect-button:hover {
-            background-color: transparent;
-            color: var(--purple);
-            outline: 2px solid var(--purple);
+            &.light {
+                color: var(--white);
+                background-color: var(--purple);
+            }
+
+            &.light:hover {
+                color: var(--purple);
+                outline: 2px solid var(--purple);
+            }
+
+            &.dark {
+                color: var(--black);
+                background-color: var(--orange);
+            }
+
+            &.dark:hover {
+                color: var(--orange);
+                outline: 2px solid var(--orange);
+            }
+
+            &:hover {
+                background-color: transparent;
+            }
         }
     }
 
@@ -34,8 +50,15 @@ div.account-container {
         gap: 0.5rem;
 
         p {
-            color: black;
             font-size: 1rem;
+
+            &.light {
+                color: var(--black);
+            }
+
+            &.dark {
+                color: var(--white);
+            }
         }
     }
 }
